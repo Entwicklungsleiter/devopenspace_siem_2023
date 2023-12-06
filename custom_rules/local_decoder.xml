@@ -1,0 +1,9 @@
+<decoder name="devopenspace_custom_decoder">
+  <program_name>^example</program_name>
+</decoder>
+
+<decoder name="devopenspace_custom_decoder">
+  <parent>devopenspace_custom_decoder</parent>
+  <regex>User '(\w+)' logged from '(\d+.\d+.\d+.\d+)'</regex>
+  <order>user, srcip</order>
+</decoder>

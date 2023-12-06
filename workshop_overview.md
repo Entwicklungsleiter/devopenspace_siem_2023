@@ -37,28 +37,31 @@ overview:
 ## chapter 2: installation
 
 * [Wazuh components overview](./technical_concept_draft.jpg)
+* Wazuh server scaling [(1)](https://documentation.wazuh.com/current/quickstart.html#hardware) [(2)](https://wazuh.com/cloud/#pricing)
 * [installation server](https://documentation.wazuh.com/current/quickstart.html) (on Linux)
 * [installation agent](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/index.html) (on Windows)
 * add sample data (through Wazuh settings page)
-* confgure agents
+* configure agents
   - [agent groups](https://documentation.wazuh.com/current/user-manual/agents/grouping-agents.html) (Management > Groups)
   - centralized agent configuration /var/ossec/etc/shared/
 * server configuration
   - ossec.conf
   - remote syslog agents
     ```shell
+    # use netcat to send Your custom event data to Wazuh syslog channel
     nc -u <Wazuh Server IP> 514
     ```
-  - enable & cleanup logging
+  - enable (in ossec.conf) & cleanup logging [(CronTab)](./wazuh_cleanup_crontab)
 
 ## chapter 3: technical overview Wazuh
 
 * server filesystem overview
-  - logs
+  - logs /var/ossec/logs
   - ossec.conf
-  - opensearch data storage
+  - opensearch data storage /var/lib/wazuh-indexer/
   - rulesets (local_*.xml, custom rulessets, Github rulesets, logtester)
   - binary programs (cleanup and group agents, test logs)
+  - start and stop Wazuh components with systemctl, find infos in journalctl
 * [Wazuh rulesets](https://documentation.wazuh.com/current/user-manual/ruleset/custom.html)
   - rules and decoders
 * index management:
@@ -70,3 +73,10 @@ overview:
  * Wazuh integrations
  * run shuffle and [connect to Wazuh](https://documentation.wazuh.com/current/user-manual/manager/manual-integration.html#shuffle)
  * check integrations.log
+
+## chapter 5: customizing Wazuh rules
+
+* Why? => re-rate events, add unsupported infrastructure
+* [Wazuh ruleset syntax documentation](https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/decoders.html)
+* idea: always have a high priority default rule and rate down known bullshit
+* [basic example](./custom_rules/) of rule & decoder for cooking receipe message (what else!!!)
