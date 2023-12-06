@@ -1,4 +1,5 @@
 # cron job to clean log files
+# move file to /etc/cron.d/
 
 # every day: search and delete every file older than 7 days
 15 4 * * * root find /var/ossec/logs/alerts/ -type f -mtime +7 -exec rm -f {} \;

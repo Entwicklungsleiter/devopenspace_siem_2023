@@ -1,4 +1,1 @@
 2023 Dec 05 16:02:02 MyHost example[12345]: User 'kermitthefrog' logged from '192.168.1.100'
-
-
-dhMKCgyKqumPsHcziTogb0LI*J+vx7Ym

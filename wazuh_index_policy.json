@@ -9,11 +9,6 @@
                 "name": "hot",
                 "actions": [
                     {
-                        "retry": {
-                            "count": 3,
-                            "backoff": "exponential",
-                            "delay": "1m"
-                        },
                         "replica_count": {
                             "number_of_replicas": 0
                         }
@@ -32,11 +27,6 @@
                 "name": "cold",
                 "actions": [
                     {
-                        "retry": {
-                            "count": 3,
-                            "backoff": "exponential",
-                            "delay": "1m"
-                        },
                         "read_only": {}
                     }
                 ],
@@ -53,11 +43,6 @@
                 "name": "delete",
                 "actions": [
                     {
-                        "retry": {
-                            "count": 3,
-                            "backoff": "exponential",
-                            "delay": "1m"
-                        },
                         "delete": {}
                     }
                 ],
