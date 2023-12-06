@@ -37,7 +37,7 @@ overview:
 ## chapter 2: installation
 
 * [Wazuh components overview](./technical_concept_draft.jpg)
-* Wazuh server scaling [(1)](https://documentation.wazuh.com/current/quickstart.html#hardware) [(2)](https://wazuh.com/cloud/#pricing)
+* Wazuh server dimensioning [(1)](https://documentation.wazuh.com/current/quickstart.html#hardware) [(2)](https://wazuh.com/cloud/#pricing)
 * [installation server](https://documentation.wazuh.com/current/quickstart.html) (on Linux)
 * [installation agent](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/index.html) (on Windows)
 * add sample data (through Wazuh settings page)
