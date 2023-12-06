@@ -1,0 +1,8 @@
+# cron job to clean log files
+
+# every day: search and delete every file older than 7 days
+15 4 * * * root find /var/ossec/logs/alerts/ -type f -mtime +7 -exec rm -f {} \;
+16 4 * * * root find /var/ossec/logs/archives/ -type f -mtime +7 -exec rm -f {} \;
+
+# Wazuh knows no cleanup of integration log files, do it the hard way
+17 4 * * * root echo "" > /var/ossec/logs/integrations.log
